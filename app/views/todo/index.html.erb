@@ -5,19 +5,19 @@
 <h1>      <img class="company-logo" src="https://public.3.basecamp.com/p/iahgNshn1oKq98sWGf1q89Vo/uploads/511042491/download/CodeNow%20Logo.png"></img>
 
 Workshop Todo List</h1>
-   <ul>
-<li><input type="checkbox"><a href ="show/1">Make the curriculum <span class="pomodoro-estimate"> 4 pomodoro</span></li>
-<li><input type="checkbox"><a href ="show/2">Buy workshop supplies <span class="pomodoro-estimate"><%=1+3 %> pomodoros</span></li>
-<li><input type="checkbox"><a href ="show/3">Meet with the volunteer trainers <span class="pomodoro-estimate">2 pmpdoros</span> </li> 
-<li><input type="checkbox"><a href ="show/4">Order food for Saturday and Sunday <span class="pomodoro-estimate">1 pomodoro</span></li>
-<li><input type="checkbox"><a href ="show/5">Check pre-work assignments <span class="pomodoro-estimate">2 pomodoros</span></li>
-<li><input type="checkbox"><a href ="show/6">Send workshop location to all the students <span class="pomodoro-estimate">1 pomodoro</span></li>
-<li><input type="checkbox"><a href ="show/7">clean room <span class="pomodoro-estimate"> 2 pomodoro </span></li>
+<ul class="card">
+<% @todos.each do |todo| %>
+  <li>
+    <input type="checkbox" name=""/>
+    <a href="show/<%= todo.id %>"><%= todo.description %></a>
+    <span class="pomodoro-estimate small-pomodoro-estimate"><%= todo.pomodoro_estimate %></span>
+  </li>
+<% end %>
+</ul>
 
-<li>
-    <a href="show.html">make the curriculum</a> 4 pomodoros
-</li>
-<li>
+<div id="new-todo-block">
+<a href="/todo/new" class="button add-new-todo-button" id="add-new-todo-button">Add a todo</a>
+</div>
     
 
 
